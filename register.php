@@ -83,7 +83,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // เคลียร์ฟอร์ม
         $username = $email = $full_name = "";
       } else {
-        // ตรวจจับ duplicate เฉพาะทาง
         if ($mysqli->errno == 1062) {
           $errors[] = "Username/Email ซ้ำ กรุณาใช้ค่าอื่น";
         } else {
@@ -115,6 +114,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     button{width:100%; padding:12px; border:none; border-radius:12px; margin-top:14px; background:#3b82f6; color:#fff; font-weight:600; cursor:pointer;}
     button:hover{filter:brightness(.95);}
     .hint{font-size:12px; color:#666;}
+    .login-link{display:block; text-align:center; margin-top:16px;}
+    .login-link a{color:#3b82f6; text-decoration:none; font-weight:600;}
+    .login-link a:hover{text-decoration:underline;}
   </style>
 </head>
 <body>
@@ -149,6 +151,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
       <button type="submit">สมัครสมาชิก</button>
     </form>
+
+    <!-- 🔹 เพิ่มปุ่มไปหน้า Login -->
+    <div class="login-link">
+      <a href="login.php">ไปหน้าเข้าสู่ระบบ</a>
+    </div>
+
   </div>
 </body>
 </html>
